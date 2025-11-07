@@ -1,0 +1,34 @@
+[Version]
+Signature="$Windows NT$"
+
+; ----- Policy Statement (optional text blob shown in cert) -----
+[PolicyStatementExtension]
+Policies=InternalPolicy
+Critical=0
+
+[InternalPolicy]
+OID=1.3.6.1.4.1.311.21.8.1000.1
+Notice="EDW Internal Root CA for edbradleyweb.local"
+
+; ----- Controls what the ROOT issues to subordinates -----
+[BasicConstraints]
+PathLength=1
+Critical=Yes
+
+; ----- Root CRL schedule (long; no delta) -----
+[CRLDistributionPoint]
+Empty
+
+[AuthorityInformationAccess]
+Empty
+
+[Certsrv_Server]
+RenewalKeyLength=4096
+RenewalValidityPeriod=Years
+RenewalValidityPeriodUnits=16
+CRLPeriod=Weeks
+CRLPeriodUnits=26
+CRLOverlapUnits=1
+CRLOverlapPeriod=Days
+LoadDefaultTemplates=0
+AlternateSignatureAlgorithm=1

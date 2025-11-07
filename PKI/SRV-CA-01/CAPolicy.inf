@@ -1,0 +1,32 @@
+[Version]
+Signature="$Windows NT$"
+
+[PolicyStatementExtension]
+Policies=InternalIssuingPolicy
+Critical=0
+
+[InternalIssuingPolicy]
+OID=1.3.6.1.4.1.311.21.8.1000.2
+Notice="EDW Enterprise Issuing CA for edbradleyweb.local"
+
+; Note: PathLength for the issuing cert is enforced by the ROOT when it signs the request.
+[BasicConstraints]
+PathLength=0
+Critical=Yes
+
+; Issuing CRL cadence (shorter, with delta CRLs)
+[Certsrv_Server]
+RenewalKeyLength=4096
+RenewalValidityPeriod=Years
+RenewalValidityPeriodUnits=6
+
+CRLPeriod=Days
+CRLPeriodUnits=7
+CRLDeltaPeriod=Days
+CRLDeltaPeriodUnits=1
+
+CRLOverlapPeriod=Hours
+CRLOverlapUnits=4
+
+LoadDefaultTemplates=1
+AlternateSignatureAlgorithm=1
